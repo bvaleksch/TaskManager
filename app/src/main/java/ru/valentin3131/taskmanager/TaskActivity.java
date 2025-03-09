@@ -48,7 +48,8 @@ public class TaskActivity extends AppCompatActivity {
         // Option 2: Use a String list.
         // In this example, we assume that GlobalData.getInstance().getUsers() returns List<User>.
         // We add a dummy object (or simply use null markers in adapter, but here we choose a dummy option).
-        users.add(null); // null represents no selection.
+        final String default_name = "Not to attach";
+        users.add(new User(default_name)); // null represents no selection.
 
         // Add all users from GlobalData
         List<User> globalUsers = globalData.getUsers();
@@ -101,7 +102,8 @@ public class TaskActivity extends AppCompatActivity {
                 Task task = new Task(taskName, taskStatus, taskPriority, taskDeadline);
                 globalData.addTask(task);
                 if (selectedUser != null)
-                    task.setAssignedUser(selectedUser);
+                    if (!selectedUser.getName().equals(default_name))
+                        task.setAssignedUser(selectedUser);
 
                 Toast.makeText(TaskActivity.this, "The task was created", Toast.LENGTH_SHORT).show();
                 finish();

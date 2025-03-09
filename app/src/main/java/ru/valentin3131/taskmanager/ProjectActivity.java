@@ -27,7 +27,9 @@ public class ProjectActivity extends AppCompatActivity {
                 String projectName = projectNameEditText.getText().toString();
 
                 Project project = new Project(projectName);
+                GlobalData.getInstance().addProject(project);
                 Toast.makeText(ProjectActivity.this, "The project was created", Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }

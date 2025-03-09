@@ -16,6 +16,10 @@ public class Task {
         this.deadline = deadline;
     }
 
+    public Task clone() {
+        return new Task(name, status, priority, deadline);
+    }
+
     public void setStatus(String status) {
         this.status = status;
     }

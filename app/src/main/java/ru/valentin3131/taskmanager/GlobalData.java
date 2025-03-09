@@ -32,4 +32,12 @@ public class GlobalData {
     public void addUser(User user) {
         this.users.add(user);
     }
+
+    public void addProject(Project project) {
+        projects.add(project);
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
 }

@@ -38,4 +38,8 @@ public class Project {
     public void sortTasksByPriority() {
         taskList.getTasks().sort((t1, t2) -> Integer.compare(t1.getPriority(), t2.getPriority()));
     }
+
+    public String getName() {
+        return name;
+    }
 }

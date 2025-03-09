@@ -83,5 +83,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button userListButton = findViewById(R.id.list_users);
+        userListButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, UserListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }
