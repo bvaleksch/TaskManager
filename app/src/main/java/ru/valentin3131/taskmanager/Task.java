@@ -1,8 +1,10 @@
 package ru.valentin3131.taskmanager;
 
 import java.util.Date;
+import java.util.UUID;
 
 public class Task {
+    private UUID uuid;
     private String name;
     private String status;
     private int priority;
@@ -14,10 +16,15 @@ public class Task {
         this.status = status;
         this.priority = priority;
         this.deadline = deadline;
+        this.uuid = UUID.randomUUID();
     }
 
+    private void setUUID(UUID uuid){this.uuid = uuid;}
+
     public Task clone() {
-        return new Task(name, status, priority, deadline);
+        Task task = new Task(name, status, priority, deadline);
+        task.setUUID(this.getUUID());
+        return task;
     }
 
     public void setStatus(String status) {
@@ -58,5 +65,9 @@ public class Task {
 
     public User getAssignedUser() {
         return assignedUser;
+    }
+
+    public UUID getUUID() {
+        return uuid;
     }
 }

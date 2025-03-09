@@ -1,14 +1,17 @@
 package ru.valentin3131.taskmanager;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.text.SimpleDateFormat;
 import java.util.List;
-import java.util.Locale;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder> {
 
@@ -40,6 +43,16 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         } else {
             holder.assignedUserTextView.setText("Unassigned");
         }
+
+        holder.itemView.setOnClickListener(v -> {
+            Toast.makeText(v.getContext(), "Item clicked", Toast.LENGTH_SHORT).show();
+            Log.d("RUN", "Creating intent");
+            Intent intent = new Intent(v.getContext(), EditTask.class);
+            Log.d("UUID", "Send uuid: " + task.getUUID().toString());
+            intent.putExtra("task_uuid", task.getUUID().toString());
+            Log.d("RUN", "Start EditActivity");
+            v.getContext().startActivity(intent);
+        });
     }
 
     @Override

@@ -2,6 +2,7 @@ package ru.valentin3131.taskmanager;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class GlobalData {
     private static GlobalData instance;
@@ -11,6 +12,15 @@ public class GlobalData {
     private List<Project> projects = new ArrayList<Project>();
 
     private GlobalData() {
+    }
+
+    public Task getTask(UUID uuid) {
+        for (Task task : tasks) {
+            if (task.getUUID().equals(uuid))
+                return task;
+        }
+
+        return null;
     }
 
     public static GlobalData getInstance(){

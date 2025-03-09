@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/scrollViewEditTask"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Task Name -->
+        <EditText
+            android:id="@+id/editTextTaskName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Task Name"
+            android:inputType="textPersonName" />
+
+        <!-- Task Status -->
+        <EditText
+            android:id="@+id/editTextTaskStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Task Status"
+            android:inputType="text" />
+
+        <!-- Task Priority -->
+        <EditText
+            android:id="@+id/editTextTaskPriority"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Priority"
+            android:inputType="number" />
+
+        <!-- Task Deadline -->
+        <EditText
+            android:id="@+id/editTextTaskDeadline"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Deadline (yyyy-mm-dd)"
+            android:inputType="date" />
+
+        <!-- Projects Spinner -->
+        <Spinner
+            android:layout_margin="5dp"
+            android:id="@+id/spinnerProjects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Save Button -->
+        <Button
+            android:id="@+id/buttonSaveTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Save Task" />
+
+    </LinearLayout>
+</ScrollView>
