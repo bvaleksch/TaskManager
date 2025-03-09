@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Title or Header -->
+        <TextView
+            android:id="@+id/header_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Project Manager"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="24dp"/>
+
+        <!-- Button for creating Task -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/task_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Create Task"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/header_text"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for creating Project -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/project_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Create Project"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/task_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for adding User -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/user_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Add User"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/project_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for finding Task -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/task_manager_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Find Task"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/user_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for creating Milestone -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/milestone_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Create Milestone"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/task_manager_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for generating Report -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/report_button"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Generate Report"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/milestone_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for listing Tasks -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_tasks"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Task List"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/report_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for listing Users -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_users"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="User List"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/list_tasks"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for listing Projects -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_projects"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Project List"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/list_users"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"/>
+
+        <!-- Button for listing Milestones -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/list_milestones"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Milestone List"
+            app:cornerRadius="8dp"
+            app:layout_constraintTop_toBottomOf="@id/list_projects"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

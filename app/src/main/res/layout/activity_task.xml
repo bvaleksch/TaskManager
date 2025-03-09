@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/task_name_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter task name" />
+
+    <EditText
+        android:id="@+id/task_status_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter task status" />
+
+    <EditText
+        android:id="@+id/task_priority_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter task priority" />
+
+    <EditText
+        android:id="@+id/task_deadline_edit_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter task deadline (yyyy-mm-dd)" />
+
+    <!-- Optional User chooser -->
+    <Spinner
+        android:id="@+id/user_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/create_task_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create Task" />
+
+</LinearLayout>
