@@ -4,9 +4,11 @@ import androidx.annotation.NonNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class User {
     private String name;
+    private UUID uuid;
     private List<Task> assignedTasks;
     private List<Project> projects;
 
@@ -14,7 +16,10 @@ public class User {
         this.name = name;
         this.assignedTasks = new ArrayList<>();
         this.projects = new ArrayList<>();
+        this.uuid = UUID.randomUUID();
     }
+
+    public UUID getUUID() {return uuid;}
 
     public void setName(String name) {
         this.name = name;

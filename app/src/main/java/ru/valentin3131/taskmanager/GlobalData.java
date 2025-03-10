@@ -1,10 +1,14 @@
 package ru.valentin3131.taskmanager;
 
+import android.util.Log;
+
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
 public class GlobalData {
+    public static SimpleDateFormat dataFormat = new SimpleDateFormat("yyyy-MM-dd");
     private static GlobalData instance;
     private List<Task> tasks = new ArrayList<Task>();
     private List<User> users = new ArrayList<User>();
@@ -23,6 +27,24 @@ public class GlobalData {
         return null;
     }
 
+    public User getUser(UUID uuid) {
+        for (User user : users) {
+            if (user.getUUID().equals(uuid))
+                return user;
+        }
+
+        return null;
+    }
+
+    public Project getProject(UUID uuid) {
+        for (Project project : projects) {
+            if (project.getUUID().equals(uuid))
+                return project;
+        }
+
+        return null;
+    }
+
     public static GlobalData getInstance(){
         if (instance == null)
             instance = new GlobalData();
@@ -30,7 +52,10 @@ public class GlobalData {
     }
 
     public void addTask(Task task){
-        this.tasks.add(task);
+        if (!task.isClone())
+            this.tasks.add(task);
+        else
+            Log.e("TASK", "Clone tasks are not allowed in global data");
     }
 
     public List<Task> getTasks() {

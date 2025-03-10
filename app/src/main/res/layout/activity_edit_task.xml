@@ -44,9 +44,27 @@
             android:inputType="date" />
 
         <!-- Projects Spinner -->
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Projects"/>
+
         <Spinner
-            android:layout_margin="5dp"
+            android:layout_marginVertical="10dp"
             android:id="@+id/spinnerProjects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Users"/>
+
+        <Spinner
+            android:layout_marginVertical="10dp"
+            android:id="@+id/spinnerUsers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 

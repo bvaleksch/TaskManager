@@ -2,18 +2,23 @@ package ru.valentin3131.taskmanager;
 
 import java.util.Date;
 import java.util.List;
+import java.util.UUID;
 
 import ru.valentin3131.taskmanager.Task;
 import ru.valentin3131.taskmanager.TaskList;
 
 public class Project {
     private String name;
+    private UUID uuid;
     private TaskList taskList;
 
     public Project(String name) {
         this.name = name;
         this.taskList = new TaskList();
+        this.uuid = UUID.randomUUID();
     }
+
+    public UUID getUUID() {return uuid;}
 
     public void addTask(Task task) {
         taskList.addTask(task);
