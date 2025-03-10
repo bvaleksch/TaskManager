@@ -4,7 +4,7 @@ import java.util.Date;
 import java.util.UUID;
 
 public class Task {
-    private boolean clone;
+    private boolean original;
     private UUID uuid;
     private UUID project_uuid;
     private String name;
@@ -14,7 +14,7 @@ public class Task {
     private User assignedUser;
 
     public Task(String name, String status, int priority, Date deadline) {
-        this.clone = false;
+        this.original = true;
         this.name = name;
         this.status = status;
         this.priority = priority;
@@ -28,15 +28,23 @@ public class Task {
 
     private void setProjectUUID(UUID uuid) {this.project_uuid = uuid;}
 
-    public boolean isClone() {return clone;}
+    public boolean isClone() {return !original;}
 
     public Task clone() {
         Task task = new Task(name, status, priority, deadline);
-        task.clone = true;
+        task.original = false;
         task.setUUID(this.getUUID());
         task.setProjectUUID(this.getProjectUUID());
         task.setAssignedUser(this.getAssignedUser());
         return task;
+    }
+
+    private void removeProject(){
+        if (project_uuid != null) {
+            Project prj = GlobalData.getInstance().getProject(this.getProjectUUID());
+            prj.removeTask(this);
+            this.setProjectUUID(null);
+        }
     }
 
     public void setStatus(String status) {
@@ -84,7 +92,10 @@ public class Task {
     }
 
     public void setProject(Project project) {
-        project_uuid = project.getUUID();
+        if (project != null)
+            project_uuid = project.getUUID();
+        else
+            this.removeProject();
     }
 
     public UUID getProjectUUID(){return project_uuid;}

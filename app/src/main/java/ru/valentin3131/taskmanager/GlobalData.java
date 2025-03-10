@@ -12,7 +12,6 @@ public class GlobalData {
     private static GlobalData instance;
     private List<Task> tasks = new ArrayList<Task>();
     private List<User> users = new ArrayList<User>();
-    private List<Milestone> milestones = new ArrayList<Milestone>();
     private List<Project> projects = new ArrayList<Project>();
 
     private GlobalData() {
@@ -63,6 +62,20 @@ public class GlobalData {
     }
 
     public List<User> getUsers() {return users; }
+
+    public List<User> getUsersCopy() {
+        List<User> new_users = new ArrayList<User>();
+        for (User user : users)
+            new_users.add(user.clone());
+        return new_users;
+    }
+
+    public List<Project> getProjectsCopy() {
+        List<Project> new_projects = new ArrayList<Project>();
+        for (Project project : projects)
+            new_projects.add(project.clone());
+        return new_projects;
+    }
 
     public void addUser(User user) {
         this.users.add(user);

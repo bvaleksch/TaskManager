@@ -34,12 +34,6 @@
             android:name=".TaskManagerActivity"
             android:exported="false" />
         <activity
-            android:name=".ReportActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MilestoneActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

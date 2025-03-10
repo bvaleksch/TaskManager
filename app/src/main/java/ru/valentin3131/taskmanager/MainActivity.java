@@ -8,13 +8,6 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import ru.valentin3131.taskmanager.MilestoneActivity;
-import ru.valentin3131.taskmanager.ProjectActivity;
-import ru.valentin3131.taskmanager.ReportActivity;
-import ru.valentin3131.taskmanager.TaskActivity;
-import ru.valentin3131.taskmanager.TaskManagerActivity;
-import ru.valentin3131.taskmanager.UserActivity;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -56,24 +49,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, TaskManagerActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button milestoneButton = findViewById(R.id.milestone_button);
-        milestoneButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, MilestoneActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        Button reportButton = findViewById(R.id.report_button);
-        reportButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, ReportActivity.class);
                 startActivity(intent);
             }
         });
