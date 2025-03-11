@@ -46,7 +46,7 @@ public class TaskManagerActivity extends AppCompatActivity {
                     tasks_original = GlobalData.getInstance().getTasks();
                 } else {
                     for (Project project : GlobalData.getInstance().getProjects()) {
-                        if (project.getName().equals(projectName)) {
+                        if (project.getName().toLowerCase().equals(projectName)) {
                             tasks_original = project.getTasks();
                             found = true;
                             break;
